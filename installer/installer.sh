@@ -43,9 +43,20 @@ esac
 
 echo "Detected OS: $OS, Architecture: $ARCH"
 
+# **Fetch the latest release tag dynamically from GitHub API**
+LATEST_TAG=$(curl -s "https://api.github.com/repos/${GITHUB_USER}/${REPO}/releases/latest" | grep -o '"tag_name": "[^"]*' | cut -d'"' -f4)
+
+# Validate if we got a tag
+if [ -z "$LATEST_TAG" ]; then
+    echo "Error: Unable to fetch latest release tag from GitHub."
+    exit 1
+fi
+
+echo "Latest release tag found: $LATEST_TAG"
+
 # Define the asset name based on OS and architecture.
-ASSET="stardate-${OS}-${ARCH}.tar.gz"
-DOWNLOAD_URL="https://github.com/${GITHUB_USER}/${REPO}/releases/latest/download/${ASSET}"
+ASSET="stardate-${OS}-${ARCH}-${LATEST_TAG}.tar.gz"
+DOWNLOAD_URL="https://github.com/${GITHUB_USER}/${REPO}/releases/download/${LATEST_TAG}/${ASSET}"
 
 echo "Downloading ${ASSET} from ${DOWNLOAD_URL}..."
 
@@ -59,7 +70,14 @@ else
     exit 1
 fi
 
-echo "Download complete. Extracting the archive..."
+# Verify it's a valid tar.gz before extracting
+if ! tar -tzf "${ASSET}" >/dev/null 2>&1; then
+    echo "Error: The downloaded file is NOT a valid tar.gz archive!"
+    echo "File type detected: $(file ${ASSET})"
+    exit 1
+fi
+
+echo "Extracting the archive..."
 tar -xzvf "${ASSET}"
 
 # Check that the extracted binary exists. The archive should contain a binary named 'stardate'.

@@ -12,12 +12,12 @@ A simple command-line tool to calculate **Star Trek Stardates** based on The Nex
 
 ## 📥 Installation
 
-### **1. Download the Binary**
+### **1. Download the Installer File**
 #### **For Linux/macOS**
 ```sh
-wget https://github.com/arcapol/stardate-cli/releases/latest/download/stardate
-chmod +x stardate
-sudo mv stardate /usr/local/bin/
+wget https://github.com/arcapol/stardate-cli/releases/latest/download/installer.sh
+chmod +x installer.sh
+sudo sh installer.sh
 ```
 
 ---
@@ -27,6 +27,17 @@ sudo mv stardate /usr/local/bin/
 go install github.com/arcapol/stardate-cli@latest
 ```
 
+---
+
+## 📥 Uninstallation
+
+### **Download the Uninstaller File**
+#### **For Linux/macOS**
+```sh
+wget https://github.com/arcapol/stardate-cli/releases/latest/download/uninstaller.sh
+chmod +x uninstaller.sh
+sudo sh uninstaller.sh
+```
 ---
 
 ## 📌 Usage

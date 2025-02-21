@@ -8,6 +8,27 @@ A simple command-line tool to calculate **Star Trek Stardates** based on The Nex
 - 🔢 Accurate calculation considering **leap years**
 - 💻 Lightweight, written in **Go**
 
+- **Date Conversion:**  
+  - Convert a human date to a stardate.
+  - Convert a stardate back to a human date.
+
+- **Customizable Base Year:**  
+  - **Default Base Year:** 2323.
+  - Temporarily override the base year for a single conversion using the `-base` (or `-b`) flag.
+  - Persistently update the base year for all future conversions using the `-set-base` flag.
+  - Check the current persistent base year with the `-show-base` flag.
+
+- **Locale-Aware:**  
+  All conversions use your local timezone for accurate date handling.
+
+- **Short Flags:**  
+  - `-d` for `--date`
+  - `-s` for `--stardate`
+  - `-b` for `--base`
+  - Standard help flag (`-h` or `--help`)
+
+- **Minimal Default Output:**  
+  When no flags are provided, the CLI displays the current persistent base year and the current local date, with a hint to run `stardate --help` for more details.
 ---
 
 ## 📥 Installation

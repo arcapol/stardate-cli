@@ -11,7 +11,7 @@ import (
 )
 
 // Constants for default values and config filename.
-const defaultBaseYear = 2025
+const defaultBaseYear = 2323
 const configFileName = ".stardate-cli-config"
 
 // getPersistentBaseYear reads the base year from the config file in the user's home directory.

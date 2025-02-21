@@ -132,8 +132,9 @@ func main() {
 	// If no flags are passed, display the persistent base year, current date, and a hint to use help.
 	if flag.NFlag() == 0 {
 		currentDate := time.Now().Local()
-		fmt.Printf("Reference Year : %d\n", persistentBase)
+		currentStardate := calculateStardate(currentDate, persistentBase)
 		fmt.Printf("Current Date: %s\n", currentDate.Format("02-01-2006"))
+		fmt.Printf("Current Stardate (using base year %d): %.2f\n", persistentBase, currentStardate)
 		fmt.Println("\nFor more details on available commands and usage, run:")
 		fmt.Println("  stardate -h or --help")
 		os.Exit(0)

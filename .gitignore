@@ -7,7 +7,7 @@
 *.dll
 *.so
 *.dylib
-stardate-cli
+*stardate-cli*
 
 # Test binary, built with `go test -c`
 *.test

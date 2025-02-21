@@ -76,6 +76,41 @@ stardate
 Stardate: 142.47
 ```
 
+- **Convert Human Date to Stardate:**  
+  Specify a date with `-date` (or `-d`). If omitted, the current date is used.
+  ```sh
+  stardate -date 21-02-2025
+  ```
+  
+- **Convert Stardate to Human Date:**  
+  Use the `-stardate` (or `-s`) flag:
+  ```sh
+  stardate -stardate 45000
+  ```
+
+- **Temporary Base Year Override:**  
+  Use `-base` (or `-b`) to set a base year for just this conversion:
+  ```sh
+  stardate -date 21-02-2025 -base 2300
+  ```
+
+- **Persistently Update Base Year:**  
+  Update the stored base year (affects future conversions) with:
+  ```sh
+  stardate -set-base 2300
+  ```
+
+- **Show Current Persistent Base Year:**  
+  ```sh
+  stardate -show-base
+  ```
+
+- **Help:**  
+  For detailed usage information, run:
+  ```sh
+  stardate --help
+  ```
+
 ---
 
 ### **Calculate Stardate for a Specific Date**

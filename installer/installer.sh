@@ -56,6 +56,7 @@ echo "Latest release tag found: $LATEST_TAG"
 
 # Define the asset name based on OS and architecture.
 ASSET="stardate-${OS}-${ARCH}.tar.gz"
+BINARY_NAME="stardate-${OS}-${ARCH}"
 DOWNLOAD_URL="https://github.com/${GITHUB_USER}/${REPO}/releases/download/${LATEST_TAG}/${ASSET}"
 
 echo "Downloading ${ASSET} from ${DOWNLOAD_URL}..."
@@ -81,10 +82,13 @@ echo "Extracting the archive..."
 tar -xzvf "${ASSET}"
 
 # Check that the extracted binary exists. The archive should contain a binary named 'stardate'.
-if [ ! -f stardate ]; then
+if [ ! -f "${BINARY_NAME}" ]; then
     echo "Error: Extracted binary 'stardate' not found."
     exit 1
 fi
+
+echo "Renaming '${BINARY_NAME}' to 'stardate'..."
+mv "${BINARY_NAME}" "stardate"
 
 echo "Installing 'stardate' to /usr/local/bin..."
 mv stardate /usr/local/bin/stardate

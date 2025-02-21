@@ -33,7 +33,7 @@ go install github.com/arcapol/stardate-cli@latest
 
 ---
 
-## 📥 Uninstallation
+## 🗑️ Uninstallation
 
 ### **Download the Uninstaller File**
 #### **For Linux/macOS**
@@ -71,9 +71,9 @@ Stardate: 972.60
 ## 📜 Stardate Formula
 This CLI follows the **Star Trek: The Next Generation (TNG)** Stardate system:
 
-\[
+$$
 \text{Stardate} = 1000 \times (\text{Year} - 2025) + \frac{\text{Day of the Year}}{\text{Total Days in the Year}} \times 1000
-\]
+$$
 
 - **Reference Year:** 2025
 - **Leap Year Handling:** Yes ✅

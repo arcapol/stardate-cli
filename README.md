@@ -15,7 +15,7 @@ A simple command-line tool to calculate **Star Trek Stardates** based on The Nex
 ### **1. Download the Binary**
 #### **For Linux/macOS**
 ```sh
-wget https://github.com/YOUR_GITHUB_USERNAME/stardate-cli/releases/latest/download/stardate
+wget https://github.com/arcapol/stardate-cli/releases/latest/download/stardate
 chmod +x stardate
 sudo mv stardate /usr/local/bin/
 ```
@@ -24,7 +24,7 @@ sudo mv stardate /usr/local/bin/
 
 ### **2. Install via `go install` (For Go Developers)**
 ```sh
-go install github.com/YOUR_GITHUB_USERNAME/stardate-cli@latest
+go install github.com/arcapol/stardate-cli@latest
 ```
 
 ---
@@ -69,7 +69,7 @@ This CLI follows the **Star Trek: The Next Generation (TNG)** Stardate system:
 
 ### **Clone the Repo**
 ```sh
-git clone https://github.com/YOUR_GITHUB_USERNAME/stardate-cli.git
+git clone https://github.com/arcapol/stardate-cli.git
 cd stardate-cli
 ```
 

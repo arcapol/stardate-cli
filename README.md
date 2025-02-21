@@ -19,6 +19,10 @@ wget https://github.com/arcapol/stardate-cli/releases/latest/download/installer.
 chmod +x installer.sh
 sudo sh installer.sh
 ```
+  The installer automatically:
+   - Detects your operating system and architecture.
+   - Downloads the appropriate tar.gz asset from the latest release.
+   - Extracts and installs the `stardate` binary to `/usr/local/bin`.
 
 ---
 

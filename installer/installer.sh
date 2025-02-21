@@ -55,7 +55,7 @@ fi
 echo "Latest release tag found: $LATEST_TAG"
 
 # Define the asset name based on OS and architecture.
-ASSET="stardate-${OS}-${ARCH}-${LATEST_TAG}.tar.gz"
+ASSET="stardate-${OS}-${ARCH}.tar.gz"
 DOWNLOAD_URL="https://github.com/${GITHUB_USER}/${REPO}/releases/download/${LATEST_TAG}/${ASSET}"
 
 echo "Downloading ${ASSET} from ${DOWNLOAD_URL}..."

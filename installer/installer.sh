@@ -8,7 +8,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # Set GitHub repository details.
-GITHUB_USER="YOUR_GITHUB_USERNAME"
+GITHUB_USER="arcapol"
 REPO="stardate-cli"
 
 # Detect OS.

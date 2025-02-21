@@ -73,39 +73,46 @@ stardate
 ```
 📌 **Example Output:**
 ```
-Stardate: 142.47
+Current Date: 22-02-2025
+Current Stardate (using base year 2323): -297854.79
 ```
 
-- **Convert Human Date to Stardate:**  
+### **Convert Human Date to Stardate:**  
+
   Specify a date with `-date` (or `-d`). If omitted, the current date is used.
   ```sh
   stardate -date 21-02-2025
   ```
   
-- **Convert Stardate to Human Date:**  
+### **Convert Stardate to Human Date:** 
+
   Use the `-stardate` (or `-s`) flag:
   ```sh
   stardate -stardate 45000
   ```
 
-- **Temporary Base Year Override:**  
+### **Temporary Base Year Override:**  
+
   Use `-base` (or `-b`) to set a base year for just this conversion:
   ```sh
   stardate -date 21-02-2025 -base 2300
   ```
 
-- **Persistently Update Base Year:**  
+### **Persistently Update Base Year:**  
+
   Update the stored base year (affects future conversions) with:
   ```sh
   stardate -set-base 2300
   ```
 
-- **Show Current Persistent Base Year:**  
+### **Show Current Persistent Base Year:**  
+
   ```sh
   stardate -show-base
   ```
 
-- **Help:**  
+### **Help:**  
+
   For detailed usage information, run:
   ```sh
   stardate --help
@@ -113,25 +120,14 @@ Stardate: 142.47
 
 ---
 
-### **Calculate Stardate for a Specific Date**
-```sh
-stardate -date 21-12-2025
-```
-📌 **Example Output:**
-```
-Stardate: 972.60
-```
-
----
-
 ## 📜 Stardate Formula
 This CLI follows the **Star Trek: The Next Generation (TNG)** Stardate system:
 
 $$
-\text{Stardate} = 1000 \times (\text{Year} - 2025) + \frac{\text{Day of the Year}}{\text{Total Days in the Year}} \times 1000
+\text{Stardate} = 1000 \times (\text{Year} - Reference Year) + \frac{\text{Day of the Year}}{\text{Total Days in the Year}} \times 1000
 $$
 
-- **Reference Year:** 2025
+- **Reference Year:** 2323
 - **Leap Year Handling:** Yes ✅
 
 ---
